@@ -1,0 +1,144 @@
+
+traps:     file format elf64-x86-64
+
+SYMBOL TABLE:
+00000000000002a8 l    d  .interp	0000000000000000              .interp
+00000000000002c4 l    d  .note.gnu.build-id	0000000000000000              .note.gnu.build-id
+00000000000002e8 l    d  .note.ABI-tag	0000000000000000              .note.ABI-tag
+0000000000000308 l    d  .gnu.hash	0000000000000000              .gnu.hash
+0000000000000330 l    d  .dynsym	0000000000000000              .dynsym
+0000000000000630 l    d  .dynstr	0000000000000000              .dynstr
+0000000000000776 l    d  .gnu.version	0000000000000000              .gnu.version
+00000000000007b8 l    d  .gnu.version_r	0000000000000000              .gnu.version_r
+00000000000007e8 l    d  .rela.dyn	0000000000000000              .rela.dyn
+0000000000000a28 l    d  .rela.plt	0000000000000000              .rela.plt
+0000000000001000 l    d  .init	0000000000000000              .init
+0000000000001020 l    d  .plt	0000000000000000              .plt
+00000000000011c0 l    d  .plt.got	0000000000000000              .plt.got
+00000000000011d0 l    d  .text	0000000000000000              .text
+00000000000023b4 l    d  .fini	0000000000000000              .fini
+0000000000003000 l    d  .rodata	0000000000000000              .rodata
+00000000000035fc l    d  .eh_frame_hdr	0000000000000000              .eh_frame_hdr
+00000000000036c8 l    d  .eh_frame	0000000000000000              .eh_frame
+0000000000004d70 l    d  .init_array	0000000000000000              .init_array
+0000000000004d78 l    d  .fini_array	0000000000000000              .fini_array
+0000000000004d80 l    d  .data.rel.ro	0000000000000000              .data.rel.ro
+0000000000004df8 l    d  .dynamic	0000000000000000              .dynamic
+0000000000004fd8 l    d  .got	0000000000000000              .got
+0000000000005000 l    d  .got.plt	0000000000000000              .got.plt
+00000000000050e0 l    d  .data	0000000000000000              .data
+0000000000005920 l    d  .bss	0000000000000000              .bss
+0000000000000000 l    d  .comment	0000000000000000              .comment
+0000000000000000 l    df *ABS*	0000000000000000              crtstuff.c
+0000000000001200 l     F .text	0000000000000000              deregister_tm_clones
+0000000000001230 l     F .text	0000000000000000              register_tm_clones
+0000000000001270 l     F .text	0000000000000000              __do_global_dtors_aux
+0000000000005928 l     O .bss	0000000000000001              completed.0
+0000000000004d78 l     O .fini_array	0000000000000000              __do_global_dtors_aux_fini_array_entry
+00000000000012b0 l     F .text	0000000000000000              frame_dummy
+0000000000004d70 l     O .init_array	0000000000000000              __frame_dummy_init_array_entry
+0000000000000000 l    df *ABS*	0000000000000000              traps.c
+0000000000004d80 l     O .data.rel.ro	0000000000000078              levels
+0000000000000000 l    df *ABS*	0000000000000000              crtstuff.c
+0000000000003b64 l     O .eh_frame	0000000000000000              __FRAME_END__
+0000000000000000 l    df *ABS*	0000000000000000              
+0000000000004d78 l       .init_array	0000000000000000              __init_array_end
+0000000000004df8 l     O .dynamic	0000000000000000              _DYNAMIC
+0000000000004d70 l       .init_array	0000000000000000              __init_array_start
+00000000000035fc l       .eh_frame_hdr	0000000000000000              __GNU_EH_FRAME_HDR
+0000000000005000 l     O .got.plt	0000000000000000              _GLOBAL_OFFSET_TABLE_
+0000000000001000 l     F .init	0000000000000000              _init
+00000000000023b0 g     F .text	0000000000000001              __libc_csu_fini
+00000000000059e8 g     O .bss	0000000000000008              binary_path
+0000000000000000       F *UND*	0000000000000000              sigprocmask@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              free@GLIBC_2.2.5
+0000000000005940 g     O .bss	0000000000000008              message
+0000000000000000       F *UND*	0000000000000000              __errno_location@GLIBC_2.2.5
+0000000000001aea g     F .text	00000000000000cb              run_level
+0000000000000000  w      *UND*	0000000000000000              _ITM_deregisterTMCloneTable
+00000000000050e0  w      .data	0000000000000000              data_start
+0000000000001395 g     F .text	0000000000000001              save_attempt
+0000000000005500 g     O .data	0000000000000400              logfile
+00000000000035c0 g     O .rodata	000000000000003a              s0
+0000000000000000       F *UND*	0000000000000000              puts@GLIBC_2.2.5
+000000000000150f g     F .text	00000000000000b4              swap_to_stdin
+0000000000003540 g     O .rodata	0000000000000030              s2
+00000000000034d0 g     O .rodata	0000000000000011              s4
+00000000000051c0 g     O .data	000000000000007c              falling8
+0000000000005a00 g     O .bss	0000000000000008              in_file
+0000000000001710 g     F .text	000000000000005e              level_two
+0000000000005914 g       .data	0000000000000000              _edata
+0000000000000000       F *UND*	0000000000000000              getpwuid@GLIBC_2.2.5
+00000000000023b4 g     F .fini	0000000000000000              .hidden _fini
+0000000000000000       F *UND*	0000000000000000              strlen@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              getuid@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              printf@GLIBC_2.2.5
+000000000000176e g     F .text	0000000000000009              min
+0000000000000000       F *UND*	0000000000000000              snprintf@GLIBC_2.2.5
+0000000000005120 g     O .data	000000000000001d              falling11
+0000000000001396 g     F .text	0000000000000179              pop_trap
+00000000000059f0 g     O .bss	0000000000000008              username
+00000000000059f8 g     O .bss	0000000000000004              gradescope
+0000000000005960 g     O .bss	0000000000000080              password
+0000000000000000       F *UND*	0000000000000000              __libc_start_main@GLIBC_2.2.5
+0000000000005400 g     O .data	000000000000005b              falling3
+0000000000005320 g     O .data	0000000000000052              falling5
+00000000000054c0 g     O .data	0000000000000033              falling1
+00000000000018bc g     F .text	0000000000000187              level_three
+00000000000050e0 g       .data	0000000000000000              __data_start
+0000000000000000       F *UND*	0000000000000000              strcmp@GLIBC_2.2.5
+0000000000005948 g     O .bss	000000000000000c              start
+0000000000000000       F *UND*	0000000000000000              fprintf@GLIBC_2.2.5
+0000000000000000  w      *UND*	0000000000000000              __gmon_start__
+0000000000000000       F *UND*	0000000000000000              strtol@GLIBC_2.2.5
+00000000000050e8 g     O .data	0000000000000000              .hidden __dso_handle
+0000000000000000       F *UND*	0000000000000000              realpath@GLIBC_2.3
+0000000000000000       F *UND*	0000000000000000              sigfillset@GLIBC_2.2.5
+0000000000003000 g     O .rodata	0000000000000004              _IO_stdin_used
+000000000000136e g     F .text	0000000000000027              check_error
+0000000000005910 g     O .data	0000000000000004              is_using_input_file
+0000000000002350 g     F .text	000000000000005d              __libc_csu_init
+00000000000012b5 g     F .text	00000000000000b9              level_zero
+0000000000001a43 g     F .text	0000000000000091              level_four
+0000000000005a08 g       .bss	0000000000000000              _end
+00000000000011d0 g     F .text	000000000000002b              _start
+0000000000003580 g     O .rodata	0000000000000023              s1
+0000000000003500 g     O .rodata	0000000000000030              s3
+0000000000005240 g     O .data	000000000000007c              falling7
+0000000000005180 g     O .data	000000000000003b              falling9
+0000000000005100 g     O .data	000000000000001e              falling12
+0000000000000000       F *UND*	0000000000000000              fdopen@GLIBC_2.2.5
+0000000000005914 g       .bss	0000000000000000              __bss_start
+0000000000001bb5 g     F .text	0000000000000791              main
+0000000000005954 g     O .bss	0000000000000004              offset
+00000000000034b0 g     O .rodata	000000000000001a              level_message
+0000000000001637 g     F .text	0000000000000030              strings_not_equal
+00000000000059e0 g     O .bss	0000000000000004              is_test
+0000000000000000       F *UND*	0000000000000000              fopen@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              perror@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              strtok@GLIBC_2.2.5
+0000000000005140 g     O .data	000000000000003b              falling10
+0000000000001698 g     F .text	0000000000000078              read_two_numbers_greater_than_five
+0000000000000000       F *UND*	0000000000000000              getline@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              exit@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              fwrite@GLIBC_2.2.5
+0000000000005918 g     O .data	0000000000000000              .hidden __TMC_END__
+00000000000017db g     F .text	00000000000000e1              read_four_numbers
+0000000000000000  w      *UND*	0000000000000000              _ITM_registerTMCloneTable
+0000000000001667 g     F .text	0000000000000031              level_one
+0000000000005380 g     O .data	0000000000000067              falling4
+00000000000052c0 g     O .data	0000000000000054              falling6
+0000000000005460 g     O .data	0000000000000060              falling2
+0000000000000000       F *UND*	0000000000000000              strdup@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              strerror@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              sleep@GLIBC_2.2.5
+0000000000000000  w    F *UND*	0000000000000000              __cxa_finalize@GLIBC_2.2.5
+0000000000005900 g     O .data	0000000000000010              hB9p2fweb728328as
+0000000000001ad4 g     F .text	0000000000000015              escape
+00000000000015c3 g     F .text	0000000000000074              get_input
+0000000000001777 g     F .text	0000000000000064              read_six_numbers
+0000000000000000       F *UND*	0000000000000000              usleep@GLIBC_2.2.5
+0000000000005920 g     O .bss	0000000000000008              stderr@GLIBC_2.2.5
+0000000000001ae9 g     F .text	0000000000000001              test
+
+

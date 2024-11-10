@@ -1,0 +1,48 @@
+Questions
+
+1. Consider the thread created in start_listener. How many threads with this functionality should be running on the server at any given time?
+Ans: There will only be 1 thread running this specific listener functionality at any given time per port. This is because the listener thread's primary purpose is to accept incoming connections and then hand over the actual handling of these connections to other processes or threads. Having more than one listener thread per port is unnecessary and can lead to conflicts.
+
+
+2. In the listener function, what do each of the following fields of the sockaddr_in struct represent: sin_family, sin_port, and sin_addr.s_addr?
+Ans:
+sin_family: specifies the address family or the type of addresses that the socket can communicate with. It is set to AF_INET, indicating that the socket is using an IPv4 Internet protocol. 
+
+sin_port: specifies the port number for the socket.
+
+sin_addr.s_addr: specifies the IP address for the socket.
+
+
+3. What is the purpose of each of the following function calls in listener: socket, bind, listen, and accept? You should explain what each call does and what the effect would be if it were not called.
+Ans:
+socket(): used to create a new socket, which is an endpoint for communication. If it's not called, the program won't have a socket to work with, meaning it cannot perform any network communication.
+
+bind(): used to assign a local protocol address to the socket. If it's not called, the socket would not have a specific local address. As a result, the system wouldn't know which incoming connections on the network should be directed to this socket.
+
+listen(): used to set up the socket to listen for incoming connections. If it's not called, the socket will not be in a listening state, meaning it won't accept incoming connections. This would make the server non-functional as it couldn't handle or accept any client requests.
+
+accept(): used to accept a connection from the queue of pending connections. If it's not called, the server would not actually establish a connection with a client, even though it might be listening for connections.
+
+
+4. Which protocol (TCP or UDP) is used for communication? Why is this protocol used? (Hint: see line 37 in comm.c)
+Ans: As mentioned above, the parameters AF_INET and SOCK_STREAM indicate that the socket is of the IPv4 family (AF_INET) and is a stream socket, implying the use of TCP (SOCK_STREAM). TCP is used here for several reasons I can think of:
+* Reliability: TCP provides reliable transmission of data. This ensures that data packets are delivered in the correct order, and it handles retransmission of lost or damaged packets.
+* Connection-oriented: as a connection-oriented protocol, TCP allows for a continuous stream of communication between the client and server once a connection is established.
+* Flow and Congestion Control: TCP manages network congestion and controls the flow of data to ensure that the network does not become overloaded.
+* Error Checking: TCP performs error checking to ensure the integrity of data transmission.
+
+
+5. Describe what comm_serve does. How are the response and command parameters used? What would happen if the stream pointed to by cxstr were closed?
+Ans: "comm_serve" first checks if the response string has a length greater than 0. If so, it sends this response to the client using "fputs(response, cxstr)" and adds a newline character with "fputc('\n', cxstr)". It then flushes the stream with "fflush(cxstr)" to ensure the data is sent immediately. After sending the response, it waits to receive a command from the client using "fgets(command, BUFLEN, cxstr)". This reads a line from the client into the command buffer.
+
+Specifically, the "response" parameter is used to send data back to the client, and the "command" parameter is used to receive data from the client.
+
+If the stream pointed to by cxstr were closed, function calls involving "cxstr" (like "fputs", "fputc", "fflush", and "fgets") would fail. That being said, attempts to write to or read from a closed stream would result in an error.
+
+
+6. Describe, in detail, what happens during each iteration of the while loop in the listener function. Be sure to include explanations of all significant function calls.
+Ans: The while loop in the listener function is for the server to handle incoming client connections. More specifically:
+* The loop begins with a call to "accept(lsock, (struct sockaddr *)&client_addr, &client_len)", which accept a connection request from a client. "lsock" is the listening socket file descriptor, "client_addr" is a structure that will be filled with the address of the connecting client, and "client_len" is a variable that initially contains the size of the "client_addr" structure and is modified to contain the actual size of the address structure returned. If accept() is successful, it returns a new socket file descriptor for the accepted connection. This new file descriptor (csock) is used for subsequent communication with the connected client. If accept() fails (returns a value less than 0), an error message is printed and the loop continues, waiting for the next connection request.
+* After a successful accept(), the server logs the connection. It prints the client's IP address and port number using "inet_ntoa(client_addr.sin_addr)" and "client_addr.sin_port".
+* The file descriptor "csock" returned by accept() is then converted to a FILE stream using "fdopen(csock, "w+")". This allows for more convenient stream-oriented read and write operations on the socket. The "w+" mode opens the stream for both reading and writing. If fdopen() fails (returns NULL), an error is printed, the client socket is closed using "close(csock)", and the loop continues to wait for the next connection.
+* With the successful creation of a FILE stream (cxstr), the server function is then called with "cxstr" as an argument.
